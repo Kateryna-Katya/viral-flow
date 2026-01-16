@@ -35,4 +35,30 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    // Функция инициализации анимаций появления
+const initScrollReveal = () => {
+    const reveals = document.querySelectorAll('.reveal');
+    
+    const observerOptions = {
+        threshold: 0.15
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                // После активации можно прекратить наблюдение за этим элементом
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    reveals.forEach(el => observer.observe(el));
+};
+
+// Вызываем функцию в DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => {
+    // ... предыдущий код (lucide, header) ...
+    initScrollReveal();
+});
 });

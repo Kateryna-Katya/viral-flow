@@ -1120,3 +1120,63 @@ a {
         text-align: center;
     }
 }
+/* --- LEGAL PAGES STYLES --- */
+.pages {
+    padding: 160px 0 100px;
+    min-height: 80vh;
+}
+
+.pages h1 {
+    font-family: var(--font-accent);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(201, 160, 125, 0.2);
+    padding-bottom: 20px;
+}
+
+.pages h2 {
+    font-family: var(--font-accent);
+    font-size: 1.8rem;
+    margin: 40px 0 20px;
+    color: var(--text-main);
+}
+
+.pages p {
+    margin-bottom: 20px;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.pages ul {
+    margin-bottom: 30px;
+    padding-left: 20px;
+}
+
+.pages li {
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    position: relative;
+    list-style: disc;
+}
+
+.pages li::marker {
+    color: var(--primary-color);
+}
+
+.pages a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.pages a:hover {
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .pages {
+        padding: 120px 0 60px;
+    }
+}
